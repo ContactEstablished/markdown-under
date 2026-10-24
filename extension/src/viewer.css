@@ -1,0 +1,108 @@
+/* Page layout for the extension viewer. Document styles come from the shared markdown.css. */
+html, body.mu-body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); }
+body.mu-body { font-family: var(--font-ui); overflow: hidden; }
+
+.mu-root { display: flex; height: 100vh; }
+
+.mu-outline {
+  flex: none;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-muted);
+  background: var(--bg-subtle);
+  font-size: 13px;
+}
+.mu-root[data-outline="false"] .mu-outline { display: none; }
+.mu-outline-title {
+  padding: 16px 16px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+.mu-outline-list { flex: 1; overflow: auto; padding: 0 8px 24px; }
+.mu-outline-item {
+  display: block;
+  padding: 4px 8px;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  color: var(--fg-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mu-outline-item.level-1, .mu-outline-item.level-2 { color: var(--fg); }
+.mu-outline-item.level-1 { font-weight: 600; }
+.mu-outline-item.level-3 { padding-left: 20px; }
+.mu-outline-item.level-4 { padding-left: 32px; }
+.mu-outline-item.level-5, .mu-outline-item.level-6 { padding-left: 44px; }
+.mu-outline-item:hover { background: var(--bg-hover); color: var(--fg); }
+.mu-outline-item.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-subtle); }
+.mu-outline-empty { padding: 4px 8px; color: var(--fg-subtle); }
+
+.mu-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.preview-scroll { flex: 1; overflow: auto; }
+.preview-scroll .markdown-body {
+  max-width: var(--content-width, 860px);
+  margin: 0 auto;
+  padding: 48px 56px 30vh;
+}
+
+.mu-raw {
+  flex: 1;
+  margin: 0;
+  padding: 32px 40px;
+  overflow: auto;
+  font: 14px/1.6 var(--font-mono);
+  white-space: pre-wrap;
+  background: var(--bg);
+  color: var(--fg);
+}
+.mu-root.show-raw .mu-main { display: none; }
+
+.mu-toolbar {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--border-muted);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  opacity: 0.35;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+.mu-toolbar:hover, .mu-toolbar:focus-within { opacity: 1; }
+.mu-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+}
+.mu-btn:hover { background: var(--bg-hover); color: var(--fg); }
+
+.markdown-body input.task-list-item-checkbox:disabled { opacity: 1; cursor: default; }
+
+@media (max-width: 760px) {
+  .mu-outline { display: none; }
+  .preview-scroll .markdown-body { padding: 32px 20px 30vh; }
+}
+
+@media print {
+  body.mu-body { overflow: visible; }
+  .mu-root, .mu-main, .preview-scroll { display: block !important; height: auto !important; overflow: visible !important; }
+  .mu-outline, .mu-toolbar, .mu-raw, .copy-code, .code-lang { display: none !important; }
+  .preview-scroll .markdown-body { max-width: none; padding: 0; }
+}

@@ -129,7 +129,8 @@ export class Preview {
   private fixImage(img: HTMLImageElement): void {
     const src = img.getAttribute("src");
     if (!src || hasUrlScheme(src) || src.startsWith("//") || src.startsWith("#")) return;
-    const absolute = resolvePath(this.baseDir, src.split(/[?#]/)[0]);
+    // A URL base (browser extension) resolves like the page would; otherwise it is a file path.
+    const absolute = hasUrlScheme(this.baseDir) ? new URL(src, this.baseDir).href : resolvePath(this.baseDir, src.split(/[?#]/)[0]);
     img.dataset.localPath = absolute;
     img.src = this.toAsset(absolute);
     img.loading = "lazy";

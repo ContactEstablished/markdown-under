@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Markdown Under</title>
+  </head>
+  <body>
+    <main class="opts">
+      <header class="opts-header">
+        <img src="/icons/64.png" alt="" width="28" height="28" />
+        <h1>Markdown Under</h1>
+      </header>
+
+      <div class="opts-warning" id="file-access" hidden>
+        <strong>Local files are off.</strong>
+        To render <code>.md</code> files on your computer, turn on <em>Allow access to file URLs</em>
+        for this extension.
+        <button type="button" id="open-details">Open extension settings</button>
+      </div>
+
+      <label class="opts-row">
+        <span>Theme</span>
+        <select id="theme">
+          <option value="system">Match system</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <label class="opts-row">
+        <span>Font</span>
+        <select id="fontFamily">
+          <option value="sans">Sans-serif</option>
+          <option value="serif">Serif</option>
+        </select>
+      </label>
+      <label class="opts-row">
+        <span>Text size <output id="fontSize-value"></output></span>
+        <input type="range" id="fontSize" min="12" max="24" step="1" />
+      </label>
+      <label class="opts-row">
+        <span>Page width <output id="contentWidth-value"></output></span>
+        <input type="range" id="contentWidth" min="600" max="1400" step="20" />
+      </label>
+      <label class="opts-check"><input type="checkbox" id="showOutline" /> Show outline sidebar</label>
+      <label class="opts-check"><input type="checkbox" id="liveReload" /> Reload local files when they change</label>
+      <label class="opts-check"><input type="checkbox" id="renderRemote" /> Render <code>.md</code> files on websites</label>
+    </main>
+    <script type="module" src="./src/options.ts"></script>
+  </body>
+</html>

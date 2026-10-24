@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.5 var(--font-ui);
+}
+.opts { display: flex; flex-direction: column; gap: 12px; padding: 16px 18px 18px; }
+.opts-header { display: flex; align-items: center; gap: 10px; }
+.opts-header h1 { margin: 0; font-size: 16px; font-weight: 600; }
+.opts-row { display: flex; flex-direction: column; gap: 4px; }
+.opts-row span { display: flex; justify-content: space-between; color: var(--fg-muted); }
+.opts-row output { color: var(--fg); }
+.opts select {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-subtle);
+  color: var(--fg);
+  font: inherit;
+}
+.opts input[type="range"] { width: 100%; accent-color: var(--accent); }
+.opts-check { display: flex; align-items: center; gap: 8px; }
+.opts-check input { accent-color: var(--accent); margin: 0; }
+.opts code { font: 12px var(--font-mono); background: var(--code-bg); padding: 1px 4px; border-radius: 4px; }
+.opts-warning {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--danger);
+  border-radius: 6px;
+  background: var(--bg-subtle);
+}
+.opts-warning button {
+  display: block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font: inherit;
+  cursor: pointer;
+}
