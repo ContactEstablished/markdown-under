@@ -5,3 +5,5 @@ src-tauri/gen/schemas/
 *.log
 .DS_Store
 extension/*.zip
+store/video/out/
+store/video/work/

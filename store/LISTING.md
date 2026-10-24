@@ -142,6 +142,10 @@ and outro, but they can't show the real extension accurately. Record the product
 with a screen recorder (Windows' Snipping Tool and Clipchamp both record and edit; OBS
 Studio is free), and edit everything together in Clipchamp, CapCut or DaVinci Resolve.
 
+**Scenes 2–9 are already recorded by script:** `npm run video:record` writes them to
+`store/video/out/`. `store/video/CAPCUT.md` lists every caption, voice line and timing for
+putting the video together in CapCut.
+
 | # | Time | Visual | Voice-over | On-screen text |
 |---|------|--------|------------|----------------|
 | 1 | 0:00–0:05 | **AI clip.** Golden-hour outback: red earth, a boomerang spinning through the air towards the camera. | (music sting) | |

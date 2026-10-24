@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>intro</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+body{background:radial-gradient(90% 90% at 50% 45%,#fffaf0 0%,#fbefd9 55%,#f3dcb4 100%);font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif}
+/* logo.png is 2124x415; shown at 0.62 => 1317x257. The "M" is x 0..510, the words 510..2124. */
+.logo{position:absolute;left:301px;top:380px;width:1317px;height:257px}
+.part{position:absolute;top:0;height:257px;background:url(../../docs/logo.png) no-repeat;background-size:1317px 257px}
+.m{position:absolute;left:0;top:0;width:316px;height:257px;animation:slide 1s cubic-bezier(.65,0,.35,1) 1.45s both}
+.left{left:0;width:160px;background-position:0 0;animation:flyL 1.25s cubic-bezier(.2,.7,.25,1) .05s both}
+.right{left:160px;width:156px;background-position:-160px 0;animation:flyR 1.25s cubic-bezier(.2,.7,.25,1) .05s both}
+.words{left:316px;width:1001px;background-position:-316px 0;animation:wipe .9s cubic-bezier(.65,0,.35,1) 1.75s both}
+.flash{position:absolute;left:158px;top:180px;width:10px;height:10px;margin:-5px;border-radius:50%;background:#f6b73c;animation:flash .5s ease-out 1.2s both}
+.tag{position:absolute;left:0;right:0;top:690px;text-align:center;font-size:40px;font-weight:600;color:#0b3a5c;letter-spacing:.01em;animation:up .6s ease-out 2.6s both}
+.tag span{color:#c05621}
+@keyframes flyL{0%{transform:translate(-1100px,-260px) rotate(-900deg);opacity:0}12%{opacity:1}100%{transform:none}}
+@keyframes flyR{0%{transform:translate(1100px,-260px) rotate(900deg);opacity:0}12%{opacity:1}100%{transform:none}}
+@keyframes slide{0%{transform:translateX(500px)}100%{transform:none}}
+@keyframes wipe{0%{clip-path:inset(0 100% 0 0);transform:translateX(-30px)}100%{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes flash{0%{transform:scale(0);opacity:.9}100%{transform:scale(40);opacity:0}}
+@keyframes up{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+*{animation-play-state:paused!important}
+</style></head>
+<body>
+<div class="logo"><div class="m"><div class="part left"></div><div class="part right"></div><div class="flash"></div></div><div class="part words"></div></div>
+<div class="tag">Beautiful Markdown, <span>right in Chrome</span></div>
+<script>
+window.seek = (ms) => { for (const a of document.getAnimations()) a.currentTime = ms; };
+</script>
+</body></html>
