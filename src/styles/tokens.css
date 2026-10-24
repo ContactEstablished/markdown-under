@@ -1,0 +1,67 @@
+/* Design tokens. The app sets data-theme="light|dark" on <html>; exported HTML does too. */
+:root {
+  color-scheme: light;
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-mono: "Cascadia Code", "Cascadia Mono", "JetBrains Mono", Consolas, ui-monospace, "SF Mono", Menlo, monospace;
+
+  --bg: #ffffff;
+  --bg-subtle: #f6f8fa;
+  --bg-muted: #eef1f4;
+  --bg-hover: rgba(31, 35, 40, 0.06);
+  --bg-active: rgba(31, 35, 40, 0.1);
+  --fg: #1f2328;
+  --fg-muted: #59636e;
+  --fg-subtle: #818b98;
+  --border: #d1d9e0;
+  --border-muted: #e5e9ed;
+  --accent: #2563d9;
+  --accent-hover: #1d4fb8;
+  --accent-fg: #ffffff;
+  --accent-subtle: rgba(37, 99, 217, 0.1);
+  --code-bg: #f6f8fa;
+  --mark-bg: #fff2a8;
+  --find-bg: rgba(255, 196, 0, 0.42);
+  --find-current-bg: #ff9632;
+  --danger: #cf222e;
+  --success: #1a7f37;
+  --shadow: 0 8px 24px rgba(31, 35, 40, 0.14), 0 1px 3px rgba(31, 35, 40, 0.1);
+
+  --alert-note: #0969da;
+  --alert-tip: #1a7f37;
+  --alert-important: #8250df;
+  --alert-warning: #9a6700;
+  --alert-caution: #cf222e;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #15171c;
+  --bg-subtle: #1b1e24;
+  --bg-muted: #22262d;
+  --bg-hover: rgba(230, 237, 243, 0.07);
+  --bg-active: rgba(230, 237, 243, 0.12);
+  --fg: #e3e7eb;
+  --fg-muted: #9ba5b0;
+  --fg-subtle: #737d88;
+  --border: #323842;
+  --border-muted: #272c34;
+  --accent: #6ea2ff;
+  --accent-hover: #8fb7ff;
+  --accent-fg: #0b1220;
+  --accent-subtle: rgba(110, 162, 255, 0.15);
+  --code-bg: #1e2229;
+  --mark-bg: #574a00;
+  --find-bg: rgba(255, 196, 0, 0.32);
+  --find-current-bg: #c96a12;
+  --danger: #f85149;
+  --success: #3fb950;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.4);
+
+  --alert-note: #4493f8;
+  --alert-tip: #3fb950;
+  --alert-important: #ab7df8;
+  --alert-warning: #d29922;
+  --alert-caution: #f85149;
+}
