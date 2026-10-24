@@ -1,5 +1,9 @@
 # Markdown Under
 
+<p align="center">
+  <img src="docs/hero.png" alt="Markdown Under in split view: Markdown source on the left, the rendered table and math on the right, outline in the sidebar" width="900">
+</p>
+
 A local, private Markdown reader **and** editor for Windows, built with Tauri 2.
 It started as a personal replacement for the free tier of the
 [Markdown Reader](https://md-reader.github.io/) browser extension, and adds the things
