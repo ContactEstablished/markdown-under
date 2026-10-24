@@ -1,4 +1,6 @@
-# Markdown Under
+<h1 align="center">
+  <img src="docs/logo.png" alt="Markdown Under" width="520">
+</h1>
 
 <p align="center">
   <img src="docs/hero.png" alt="Markdown Under in split view: Markdown source on the left, the rendered table and math on the right, outline in the sidebar" width="900">
