@@ -7,3 +7,7 @@ src-tauri/gen/schemas/
 extension/*.zip
 store/video/out/
 store/video/work/
+
+store/audio/
+
+store/video/
